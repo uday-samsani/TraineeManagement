@@ -7,7 +7,7 @@ public class TraineeManage {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		TraineeCRUD trainees = new TraineeCRUD();
+		TraineeCRUD2 trainees = new TraineeCRUD2();
 		while (true) {
 			System.out.println("======================");
 			System.out.println(

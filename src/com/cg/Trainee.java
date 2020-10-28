@@ -70,6 +70,7 @@ public class Trainee {
 	}
 	
 	public void display() {
+		System.out.println("------------------------------------------------------");
 		System.out.println("ID: "+this.traineeId);
 		System.out.println("Name: "+this.traineeName);
 		System.out.println("Salary: "+this.salary);
