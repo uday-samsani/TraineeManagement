@@ -13,57 +13,67 @@ public class TraineeManage {
 			System.out.println(
 					"Enter option:\n1. Add Trainee\n2. Update Trainee\n3.Remove Trainee\n4. View all trainees\n5. Search Trainee");
 			int option = input.nextInt();
-			if (option == 1) {
+			long traineeId;
+			float salary;
+			String traineeName, date, email, phone;
+			LocalDate dateofjoining;
+			switch (option) {
+			case 1:
 				System.out.println("-------------------------------------------------");
 				System.out.println("Add details for trainee");
 				System.out.println("Enter Trainee Id:");
-				long traineeId = input.nextLong();
+				traineeId = input.nextLong();
 				System.out.println("Enter Trainee Name:");
-				String traineeName = input.next();
+				traineeName = input.next();
 				System.out.println("Enter Trainee Salary:");
-				float salary = input.nextFloat();
+				salary = input.nextFloat();
 				System.out.println("Enter Date of Joining (DD/MM/YYYY):");
-				String date = input.next();
-				LocalDate dateofjoining = LocalDate.of(Integer.parseInt(date.split("/")[2]),
-						Integer.parseInt(date.split("/")[1]), Integer.parseInt(date.split("/")[0]));
+				date = input.next();
+				dateofjoining = LocalDate.of(Integer.parseInt(date.split("/")[2]), Integer.parseInt(date.split("/")[1]),
+						Integer.parseInt(date.split("/")[0]));
 				System.out.println("Enter Email address:");
-				String email = input.next();
+				email = input.next();
 				System.out.println("Enter Phone Number:");
-				String phone = input.next();
+				phone = input.next();
 				trainees.addTrainee(traineeId, traineeName, salary, dateofjoining, email, phone);
-			} else if (option == 2) {
+				break;
+			case 2:
 				System.out.println("-------------------------------------------------");
 				System.out.println("Update details for trainee");
 				System.out.println("Enter Trainee Id:");
-				long traineeId = input.nextLong();
+				traineeId = input.nextLong();
 				System.out.println("Enter Trainee Name:");
-				String traineeName = input.next();
+				traineeName = input.next();
 				System.out.println("Enter Trainee Salary:");
-				float salary = input.nextFloat();
+				salary = input.nextFloat();
 				System.out.println("Enter Date of Joining (DD/MM/YYYY):");
-				String date = input.next();
-				LocalDate dateofjoining = LocalDate.of(Integer.parseInt(date.split("/")[2]),
-						Integer.parseInt(date.split("/")[1]), Integer.parseInt(date.split("/")[0]));
+				date = input.next();
+				dateofjoining = LocalDate.of(Integer.parseInt(date.split("/")[2]), Integer.parseInt(date.split("/")[1]),
+						Integer.parseInt(date.split("/")[0]));
 				System.out.println("Enter Email address:");
-				String email = input.next();
+				email = input.next();
 				System.out.println("Enter Phone Number:");
-				String phone = input.next();
+				phone = input.next();
 				trainees.updateTrainee(traineeId, traineeName, salary, dateofjoining, email, phone);
-			} else if (option == 3) {
+				break;
+			case 3:
 				System.out.println("-------------------------------------------------");
 				System.out.println("Remove details for trainee");
 				System.out.println("Enter Trainee Id:");
-				long traineeId = input.nextLong();
+				traineeId = input.nextLong();
 				trainees.removeTrainee(traineeId);
-			} else if (option == 4) {
+				break;
+			case 4:
 				trainees.display();
-			} else if (option == 5) {
+				break;
+			case 5:
 				System.out.println("-------------------------------------------------");
 				System.out.println("Search Trainees");
 				System.out.println("Enter the trainee id");
-				long traineeId = input.nextLong();
+				traineeId = input.nextLong();
 				trainees.getTrainee(traineeId);
-			} else {
+				break;
+			default:
 				System.out.println("Invalid option selected");
 			}
 		}
